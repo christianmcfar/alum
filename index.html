@@ -1,0 +1,26 @@
+<!DOCTYPE>
+
+<!--
+Laurier students need to know if they have enough credit to graduate. The student enters his program 
+(say, Computer Science) and the calendar year he wants to graduate from, and the courses he has taken. 
+The app will tell the student if he has enough credit to graduate, if not, the app will tell him what 
+credit he lacks (such as half a credit in a non-science subject). 
+-->
+
+<html>
+	<head>
+		<title>Alum</title>
+		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css" />
+		<script src="jquery/jquery-1.11.3.min.js"></script>
+		<script>
+			$(document).bind('mobileinit',function(){
+			    $.mobile.changePage.defaults.changeHash = false;
+			    $.mobile.hashListeningEnabled = false;
+			    $.mobile.pushStateEnabled = false;
+			});
+			</script>
+		<script src="jquery/jquery.mobile-1.4.5.js"></script>
+
+
+	</head>
+</html>	
