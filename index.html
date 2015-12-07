@@ -18,15 +18,46 @@ credit he lacks (such as half a credit in a non-science subject).
 			    $.mobile.hashListeningEnabled = false;
 			    $.mobile.pushStateEnabled = false;
 			});
-			</script>
+		</script>
 		<script src="jquery/jquery.mobile-1.4.5.js"></script>
-		
-		<body>
-			<h1>Hello</h1>
-			<h2>hello</h2>
-		</body>
-
-		
 	</head>
-	
+
+	<body>
+		<div data-role="page" id="table_head">
+			<div data-role="header" data-theme="a">
+				<h1>Course Selection Table</h1>
+			</div>
+
+			<div>Completed:</div>
+			<div id="test1"></div>
+			<div>Missing:</div>
+			<div id="test2"></div>
+
+			<script src="js/app.js"></script>
+			<div data-role="content" id="table">
+				<ul data-role="listview" data-filter="false" data-filter-placeholder="Filter Courses" class="ui-nodisc-icon ui-alt-icon">
+					<li data-role="list-divider">Year 1</li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>		<!--variable list names-->
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-role="list-divider">Year 2</li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-role="list-divider">Year 3</li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-role="list-divider">Year 4</li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+					<li data-icon="plus"><a href="#">Add a course</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>	
 </html>	
