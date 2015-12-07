@@ -32,7 +32,6 @@ function eligibility() {
 
 	for (i=0; i < programCourses.length; i++) {
 		if (inputCourses[i] in programCourses) {
-
 			completedCourses.push(missingCourses.pop());
 		} else { 
 			missingCourses.push(programCourses[i]);
