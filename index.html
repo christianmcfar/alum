@@ -20,20 +20,25 @@ credit he lacks (such as half a credit in a non-science subject).
 			});
 		</script>
 		<script src="jquery/jquery.mobile-1.4.5.js"></script>
+		<script src="js/app.js"></script>
 	</head>
 
+
+
+
 	<body>
-		<div data-role="page" id="table_head">
+		<div data-role="page" id="signIn">
 			<div data-role="header" data-theme="a">
-				<h1>Course Selection Table</h1>
-			</div>
-
-			<div>Completed:</div>
-			<div id="test1"></div>
-			<div>Missing:</div>
-			<div id="test2"></div>
-
-			<script src="js/app.js"></script>
+				<h1>Alum</h1></div>
+			<div data-role="content">
+				<p href="#" data-role="button" class="center-button" onClick="tablePage()">Submit</p></div>
+		</div>
+		
+		<div data-role="page" id="table">
+			<div data-role="header" data-theme="a">
+				<button href="#" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l" onClick="signInPage()">Back</button>
+				<button href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home" onClick="signInPage()">Home</button>
+				<h1>Course Selection</h1></div>
 			<div data-role="content" id="table">
 				<ul data-role="listview" data-filter="false" data-filter-placeholder="Filter Courses" class="ui-nodisc-icon ui-alt-icon">
 					<li data-role="list-divider">Year 1</li>

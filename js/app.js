@@ -14,7 +14,6 @@ function addCourse(course) {
 	inputCourses.push(course);
 }; 
 
-
 //student removes a course from their current list
 function removeCourse(course) {
 	for (i=0; i < inputCourses.length; i++) {	
@@ -29,21 +28,27 @@ function eligibility() {
 	var completedCourses = [];
 	var missingCourses = programCourses;
 
-
 	for (i=0; i < programCourses.length; i++) {
-		if (inputCourses[i] in programCourses) {
-
+		if (inputCourses[i] === programCourses) {
 			completedCourses.push(missingCourses.pop());
 		} else { 
 			missingCourses.push(programCourses[i]);
 		}
 	}
-	document.getElementById("test1").innerHTML = completedCourses.toString();
-	document.getElementById("test2").innerHTML = missingCourses.toString();
 };
 
 
 
 
 
-//eligibility();
+
+
+function tablePage(){
+	$.mobile.changePage("#table");
+}
+
+function signInPage(){
+	$.mobile.changePage("#signIn");
+}
+
+
