@@ -1,66 +1,97 @@
 
 
-//required courses for the program
-var programCourses = ["CP104","CP114","MA110","MA121","MA122"]; 
-
-//courses input by student
-var inputCourses = ["CP104","CP114","MA110"];
+var programCourses = ["CP114","CP120","CP213","BU127"];
+var currentCourses = ["CP114","MA122","CP213"];
 
 
 
 
-//student adds a coruses to their current list  
-function addCourse(course) {
-	inputCourses.push(course);
+function addCourse(course, currentCourses) {
+	currentCourses.push(course);
 }; 
 
-//student removes a course from their current list
-function removeCourse(course) {
-	for (i=0; i < inputCourses.length; i++) {	
-		if (inputCourses[i] === course) {
-			delete inputCourses[i]	
+function removeCourse(course, currentCourses) {
+	for (i=0; i < currentCourses.length; i++) {	
+		if (currentCourses[i] === course) {
+			delete currentCourses[i]	
 		}
 	}
 };
 
-//checks if student is able to graduate based on their current courses
-function eligibility() {
+var eligibility = function eligibility(currentCourses, programCourses) {
 	var completedCourses = [];
-	var missingCourses = programCourses;
+	var missingCourses = [];
+	var electiveCourses = [];
+	var notElec = [];
 
-	for (i=0; i < programCourses.length; i++) {
-		if (inputCourses[i] === programCourses) {
-			completedCourses.push(missingCourses.pop());
-		} else { 
+	for (i=0; i < programCourses.length; i++){
+		for (j=0; j < currentCourses.length; j++){
+
+			if (currentCourses[j] === programCourses[i]){
+				completedCourses.push(currentCourses[j]);
+				notElec.push(currentCourses[j]);
+			}
+		}
+		if (completedCourses[completedCourses.length-1] !== programCourses[i]){
 			missingCourses.push(programCourses[i]);
+			notElec.push(programCourses[i]);
+		} 
+	}
+
+	var check = 0;
+	for (k=0; k < (currentCourses.length-1); k++){
+		check = notElec.indexOf(currentCourses[k]);
+		if (check === -1){
+			electiveCourses.push(currentCourses[k]);
 		}
 	}
+
+	document.getElementById("completed").innerHTML = completedCourses.toString();
+	document.getElementById("missing").innerHTML = missingCourses.toString();
+	document.getElementById("elective").innerHTML = electiveCourses.toString();
+
+	return [completedCourses, missingCourses, electiveCourses];
 };
-
-
-
-
-
-<<<<<<< HEAD
-
-
-function tablePage(){
-	$.mobile.changePage("#table");
-}
 
 function signInPage(){
 	$.mobile.changePage("#signIn");
 }
 
-function programSelectPage(){
-	$.mobile.changePage("#programSelect");
-}
+function year(){
 
-var year = function(){
-	for (i = new Date().getFullYear(); i < 2050; i++){
+	for (i = new Date().getFullYear(); i <= 2030; i++){
 	    $('#yearpicker').append($('<option />').val(i).html(i));
 	}	
 }
-=======
-//eligibility();
->>>>>>> origin/master
+
+function gradPage(){
+	$.mobile.changePage("#congratulations");
+}
+
+function uneligiblePage(){
+	$.mobile.changePage("#notEligible");
+}
+
+function fillMissingList(missingCourses){
+	for (i=0; i <= missingCourses.length-1; i++){
+		$("#missinglist").append($('<a class="ui-li-static ui-body-inherit" />').html(missingCourses[i]));
+	}
+}
+
+function saveProfile(){
+	sessionStorage.program = $( "#program option:selected" ).text();
+	sessionStorage.year = $( "#yearpicker" ).val();
+	$.mobile.changePage("#table");	
+}
+
+function saveUser(){
+	sessionStorage.studentId = $("#studentId").val();
+	sessionStorage.password = $("#password").val();
+	$.mobile.changePage("#programSelect");
+}
+
+
+
+
+
+
