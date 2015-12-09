@@ -34,7 +34,7 @@ credit he lacks (such as half a credit in a non-science subject).
 					<h1>Course Selection Form</h1>
 			</div> <!--End of Header -->
 			
-			<div data-role="main" class="ui-content">
+			<div data-role="main" class="ui-content" id="sub">
 				<!-- Subject Select Menu -->
 				<form method ="post" action="#">
 					<fieldset class="ui-field-contain">
@@ -130,26 +130,43 @@ credit he lacks (such as half a credit in a non-science subject).
 			</div>
 			
 			<div id="selCourse">
-				<form method="post" action="">
-				  <fieldset data-role="controlgroup">
-					<legend>Choose the courses you've completed:</legend>
-					  <label for="red">Red</label>
-					  <input type="checkbox" name="red" id="red" value="red">
-					  <label for="green">Green</label>
-					  <input type="checkbox" name="green" id="green" value="green">
-					  <label for="blue">Blue</label>
-					  <input type="checkbox" name="blue" id="blue" value="blue">	
-				  </fieldset>
-				</form>
+				
+				<ul data-role="listview" data-inset="true" id="test" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+
+				 </ul>
+				
 			</div>
 								
 
 			<a href="" class="ui-btn ui-btn-inline ui-corner-all" onclick="courseList()">Submit</a>
 				
-			<div id="demo"></div>
+			
 			<div id="subCourse"></div>
 			
 		</div> <!-- End of Page-->
+		
+		<script>
+			$(document).on('change', '#subject', function(){
+				var subject = $("#subject").val();
+				var courses = [];
+				
+				$("ul").empty();
+				
+				if (subject === "BU"){
+					courses = BU();
+				} else if (subject === "CP"){
+					courses = CP();
+				} else if (subject === "MA"){
+					courses = MA();
+				} else if (subject === "PC"){
+					courses = PC();
+				} else if (subject === "PS"){
+					courses = PS();
+				} 
+								
+				addCourseCheckbox(courses);
+			});
+		</script>
 		
 	</body>	
 </html>	
