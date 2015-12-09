@@ -25,18 +25,49 @@ credit he lacks (such as half a credit in a non-science subject).
 
 
 
-
 	<body>
 		<div data-role="page" id="signIn">
 			<div data-role="header" data-theme="a">
 				<h1>Alum</h1></div>
+			<div>
+				<form>
+					<h4 for="text">Student ID:</h4>
+					<input type="text" data-clear-btn="true" id="studentId" value=""></form></div>
+			<div>
+				<form>
+					<h4 for="password">Password:</h4>
+					<input type="password" data-clear-btn="true" id="password" value=""></form></div>
 			<div data-role="content">
-				<p href="#" data-role="button" class="center-button" onClick="tablePage()">Submit</p></div>
+				<div href="#" class="ui-btn ui-corner-all" onClick="programSelectPage()">Submit</div></div>
 		</div>
 		
+
+
+		<div data-role="page" id="programSelect">
+			<div data-role="header" data-theme="a">
+				<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
+				<button href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home" onClick="signInPage()">Home</button>
+				<h1>Program Selection</h1>
+			</div>
+			<div>
+				<!--year select wheel-->	
+				<h4 for="yearpicker">Expected Gradaution Year:</h4>
+				<select name="yearpicker" id="yearpicker"></select>
+				<script>
+					for (i = new Date().getFullYear(); i < 2050; i++){
+					    $('#yearpicker').append($('<option />').val(i).html(i));
+					}	
+				</script>
+			</div>
+			<div data-role="content">
+				<div href="#" class="ui-btn ui-corner-all" onClick="tablePage()">Submit</div></div>
+		</div>
+
+
+
 		<div data-role="page" id="table">
 			<div data-role="header" data-theme="a">
-				<button href="#" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-arrow-l" onClick="signInPage()">Back</button>
+				<a href="#" data-rel="back" class="ui-btn-left ui-btn ui-icon-back ui-btn-icon-notext ui-shadow ui-corner-all" data-role="button" role="button">Back</a>
 				<button href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home" onClick="signInPage()">Home</button>
 				<h1>Course Selection</h1></div>
 			<div data-role="content" id="table">
@@ -64,5 +95,8 @@ credit he lacks (such as half a credit in a non-science subject).
 				</ul>
 			</div>
 		</div>
+
+
+
 	</body>	
 </html>	

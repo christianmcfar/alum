@@ -51,4 +51,12 @@ function signInPage(){
 	$.mobile.changePage("#signIn");
 }
 
+function programSelectPage(){
+	$.mobile.changePage("#programSelect");
+}
 
+var year = function(){
+	for (i = new Date().getFullYear(); i < 2050; i++){
+	    $('#yearpicker').append($('<option />').val(i).html(i));
+	}	
+}
