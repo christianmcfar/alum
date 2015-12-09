@@ -1,0 +1,83 @@
+<!DOCTYPE>
+
+<!--
+Laurier students need to know if they have enough credit to graduate. The student enters his program 
+(say, Computer Science) and the calendar year he wants to graduate from, and the courses he has taken. 
+The app will tell the student if he has enough credit to graduate, if not, the app will tell him what 
+credit he lacks (such as half a credit in a non-science subject). 
+-->
+
+<html>
+	<head>
+		<title>Alum</title>
+		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css" />
+		<script src="jquery/jquery-1.11.3.min.js"></script>
+		<script>
+			$(document).bind('mobileinit',function(){
+			    $.mobile.changePage.defaults.changeHash = false;
+			    $.mobile.hashListeningEnabled = false;
+			    $.mobile.pushStateEnabled = false;
+			});
+		</script>
+		<script src="jquery/jquery.mobile-1.4.5.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/menu.js"></script>
+		<script>
+			
+		</script>
+
+	</head>
+
+	<body>
+		
+		<div data-role="page">
+		
+			<div data-role="header"> <!-- Header -->
+			<h1>Profile</h1>
+			</div>	<!-- Header End -->
+				
+			<!-- Select Menu -->
+			<div data-role="main" class="ui-content">
+				<!-- Program Select Menu -->
+				<form method ="post" action="#">
+					<fieldset class="ui-field-contain">
+						<label for="program">Select your current program: </label>	
+						<select name="program" id="program">
+							<option value="CS">Honours BSc Computer Science</option>
+							<option value="CSBBA">Honours BSc in Computer Science and Honours Bachelor of Business Administration</option>
+							<option value="CSM">Honours BSc Computer Science and Mathematics</option>
+							<option value="CSP">Honours BSc Computer Science and Psychology</option>
+							<option value="CCE">Honours BSc Computing & Computer Electronics</option>
+							<option value="PH">Honours BSc Physics</option>
+							<option value="M">Honours BSc Mathematics</option>
+							<option value="FM">Honours BSc Financial Mathematics</option>
+						</select>
+					</fieldset>
+				</form><!-- END Program Select Menu -->
+				
+				<!-- Year Select Menu -->
+				<form method ="post" action="#">
+					<fieldset class="ui-field-contain">
+						<label for="year">Select anticipated graduation year: </label>	
+						<select name="year" id="year">
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+						</select>
+					</fieldset>
+				</form><!-- END Year Select Menu -->
+			</div>
+				
+				<a href="" class="ui-btn ui-btn-inline ui-corner-all" onclick="saveProfile()">Submit</a>
+				
+				<div id="resultProgram"></div>
+				<div id="resultYear"></div>
+			
+		</div> <!-- End of Page-->
+		
+	</body>	
+</html>	

@@ -1,0 +1,155 @@
+<!DOCTYPE>
+
+<!--
+Laurier students need to know if they have enough credit to graduate. The student enters his program 
+(say, Computer Science) and the calendar year he wants to graduate from, and the courses he has taken. 
+The app will tell the student if he has enough credit to graduate, if not, the app will tell him what 
+credit he lacks (such as half a credit in a non-science subject). 
+-->
+
+<html>
+	<head>
+		<title>Alum</title>
+		<link rel="stylesheet" href="jquery/jquery.mobile-1.4.5.css" />
+		<script src="jquery/jquery-1.11.3.min.js"></script>
+		<script>
+			$(document).bind('mobileinit',function(){
+			    $.mobile.changePage.defaults.changeHash = false;
+			    $.mobile.hashListeningEnabled = false;
+			    $.mobile.pushStateEnabled = false;
+			});
+		</script>
+		<script src="jquery/jquery.mobile-1.4.5.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/menu.js"></script>
+	</head>
+
+	<body>
+	
+		<!--Beginning of Page -->
+		<div data-role="page" id="table_head">
+			
+			<!--Header -->
+			<div data-role="header" data-theme="a">
+					<h1>Course Selection Form</h1>
+			</div> <!--End of Header -->
+			
+			<div data-role="main" class="ui-content">
+				<!-- Subject Select Menu -->
+				<form method ="post" action="#">
+					<fieldset class="ui-field-contain">
+						<label for="subject">Select a Subject: </label>	
+						<select name="subject" id="subject">
+							<option value="AN">Anthropology</option>
+							<option value="AB">Arabic</option>
+							<option value="AR">Archaeology</option>
+							<option value="AF">Arts Topic Seminar</option>
+							<option value="AS">Astronomy</option>
+							<option value="BH">Biological &amp; Chemical Sciences</option>
+							<option value="BI">Biology</option>
+							<option value="BF">Brantford Foundations</option>
+							<option value="BU">Business</option>
+							<option value="MB">Business Technology Management</option>
+							<option value="BE">Business,Entrepreneurship&amp;Tech</option>
+							<option value="ART">CONESTOGA-Arts</option>
+							<option value="DSG">CONESTOGA-Design</option>
+							<option value="DME">CONESTOGA-Digital Media</option>
+							<option value="MGM">CONESTOGA-Management</option>
+							<option value="CH">Chemistry</option>
+							<option value="CO">Childhood Education</option>
+							<option value="CL">Classics</option>
+							<option value="CS">Communication Studies</option>
+							<option value="CP">Computer Science</option>
+							<option value="CC">Criminology</option>
+							<option value="CQ">Cultural Analysis &amp; Social Thy</option>
+							<option value="KS">Cultural Studies</option>
+							<option value="DH">Digital Humanities</option>
+							<option value="EC">Economics</option>
+							<option value="EU">Education</option>
+							<option value="EM">Education Minor</option>
+							<option value="EN">English</option>
+							<option value="ENTR">Entrepreneurship Core</option>
+							<option value="ES">Environmental Studies</option>
+							<option value="FS">Film Studies</option>
+							<option value="FI">Fine Arts</option>
+							<option value="FR">French</option>
+							<option value="DD">Game Design &amp; Development</option>
+							<option value="GG">Geography</option>
+							<option value="GL">Geology</option>
+							<option value="GM">German</option>
+							<option value="GC">Global Citizenship</option>
+							<option value="GV">Global Governance</option>
+							<option value="GS">Global Studies</option>
+							<option value="HE">Health Science</option>
+							<option value="HS">Health Studies</option>
+							<option value="HI">History</option>
+							<option value="HP">History&amp; Philosophy of Science</option>
+							<option value="HN">Human Biology</option>
+							<option value="HR">Human Rights &amp; Human Diversity</option>
+							<option value="ID">Indigenous Studies</option>
+							<option value="UU">Interdisciplinary Studies</option>
+							<option value="IP">International Public Policy</option>
+							<option value="IT">Italian</option>
+							<option value="JN">Journalism</option>
+							<option value="KP">Kinesiology &amp; Physical Ed</option>
+							<option value="LL">Language and Literature</option>
+							<option value="LA">Latin</option>
+							<option value="LY">Law &amp; Society</option>
+							<option value="OL">Leadership</option>
+							<option value="MF">Master Finance</option>
+							<option value="MS">Master Science</option>
+							<option value="MA">Mathematics</option>
+							<option value="MX">Media Studies</option>
+							<option value="ML">Medieval Studies</option>
+							<option value="MI">Mediterranean Studies</option>
+							<option value="MU">Music</option>
+							<option value="MZ">Muslim Studies</option>
+							<option value="ED">Nipissing Ed</option>
+							<option value="NO">North American Studies</option>
+							<option value="PP">Philosophy</option>
+							<option value="PC">Physics</option>
+							<option value="PD">Policing</option>
+							<option value="PO">Political Science</option>
+							<option value="PS">Psychology</option>
+							<option value="RE">Religion&amp;Culture</option>
+							<option value="SNID">SNP-Indigenous Studies</option>
+							<option value="SC">Science</option>
+							<option value="SJ">Soc Justice &amp; Community Engage</option>
+							<option value="SE">Social Entrepreneurship</option>
+							<option value="SK">Social Work</option>
+							<option value="CT">Society, Cul &amp; Env (Cont St)</option>
+							<option value="SY">Sociology</option>
+							<option value="SP">Spanish</option>
+							<option value="ST">Statistics</option>
+							<option value="TH">Theology</option>
+							<option value="WS">Women's Studies</option>
+							<option value="YC">Youth and Children Studies</option>
+						</select>
+					</fieldset>
+				</form><!-- END Subject Select Menu -->
+			</div>
+			
+			<div id="selCourse">
+				<form method="post" action="">
+				  <fieldset data-role="controlgroup">
+					<legend>Choose the courses you've completed:</legend>
+					  <label for="red">Red</label>
+					  <input type="checkbox" name="red" id="red" value="red">
+					  <label for="green">Green</label>
+					  <input type="checkbox" name="green" id="green" value="green">
+					  <label for="blue">Blue</label>
+					  <input type="checkbox" name="blue" id="blue" value="blue">	
+				  </fieldset>
+				</form>
+			</div>
+								
+
+			<a href="" class="ui-btn ui-btn-inline ui-corner-all" onclick="courseList()">Submit</a>
+				
+			<div id="demo"></div>
+			<div id="subCourse"></div>
+			
+		</div> <!-- End of Page-->
+		
+	</body>	
+</html>	

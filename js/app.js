@@ -41,6 +41,7 @@ function eligibility() {
 
 
 
+<<<<<<< HEAD
 
 
 function tablePage(){
@@ -60,3 +61,6 @@ var year = function(){
 	    $('#yearpicker').append($('<option />').val(i).html(i));
 	}	
 }
+=======
+//eligibility();
+>>>>>>> origin/master
